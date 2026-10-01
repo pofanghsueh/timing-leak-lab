@@ -7,3 +7,6 @@
   - Written by me: the function bodies in `compare.c` (filling in the TODOs) and the remaining test cases.
   - Review: Claude reviewed my code and pointed out three mistakes: passing a scalar instead of an array in the tests, a wrong expected value in one assertion, and using `=` instead of `|=` when accumulating differences. I fixed all three and re-ran the tests.
   - Second review: Claude found no logic errors in the final `compare.c` and suggested cleanup and additional tests.
+- 2026-10-01: Benchmark design notes
+  - Written by me: the ideas and answers in `docs/notes.md`, over three revision rounds.
+  - Claude: reviewed each draft and pointed out gaps (units, batch timing, per-function comparison, A/A test), then polished and translated my final answers into English.
