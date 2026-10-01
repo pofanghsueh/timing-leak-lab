@@ -47,3 +47,8 @@ What I will do about it:
 Limits of the constant-time result: if I find no difference, that does not prove there is no leakage. It only shows that no timing leakage was observed in this experiment, within its sensitivity (which depends on the sample size and the noise level).
 
 A/A test: I will split the measurements of a single input class randomly into two halves. Their difference should be small. As a provisional criterion I will require it to be under 1%. If a consistent offset persists (rather than random scatter), there is a systematic effect that needs investigation.
+
+## Predictions before running the timer program
+- Smallest non-zero difference between two timer readings: I predict the number at 1ns
+- Typical difference between two back-to-back timer calls: I predict it as a number somewhere between 0~1ns 
+- Why I think so: while timing on development board is counted by cpu cycles , counting on my cpu isn't. The most common unit near a cpu cycle is nanosecond. And the time cost between two timer calls should be very small in order to provide the most efficiency while running programs.
