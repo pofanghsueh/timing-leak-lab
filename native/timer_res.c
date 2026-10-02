@@ -13,15 +13,17 @@ static uint64_t now_ns(void)
 
 int main(void)
 {
-    uint64_t delta = 0;
+    uint64_t delta[20];
 
-    do {
+    for (int i=0; i<20; i++)
+    {
         uint64_t t0 = now_ns();
         uint64_t t1 = now_ns();
-        delta = t1 - t0; 
-    } while (delta == 0);
-
-    printf("Minimum observed delta: %" PRIu64 " ns\n", delta);
-
+        delta[i] = t1 - t0; 
+    } 
+    for (int i=0; i<20; i++)
+    {
+        printf("%"PRIu64"\n", delta[i]);
+    } 
     return 0;
 }
