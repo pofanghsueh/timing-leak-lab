@@ -52,3 +52,7 @@ A/A test: I will split the measurements of a single input class randomly into tw
 - Smallest non-zero difference between two timer readings: I predict about 1 ns 1ns, which needs further experiments  
 - Typical difference between two back-to-back timer calls: I predict its most differences will be 0 or 1 ns, which needs further experiments
 - Why I think so: while timing on development board is counted by cpu cycles , counting on my cpu isn't. The most common unit near a cpu cycle is nanosecond, however there might be differences between the return value's unit and the actual update interval of the timer, requiring further testing. And the time cost between two timer calls depends on how much work one timer call does and the clock rate, which I predict under 3 cpu cycles.
+## Predictions for the 1,000,000-sample run
+- Which distinct values will appear, and which will be most common: In 1,000,000 samples , I predict that the numbers which appears are 0 , 1000 ,the most common number appearing should be 0 .
+- Roughly what fraction of the deltas will be non-zero: I predict that the fraction of non-zero number will be 0.3% . The first non-zero number should appear at approximately the 3000th sample.
+- Why: while not knowing the cpu clock rate of my computer and how many cpu cycles the program takes I optimisticly assume that the cpu clock rate at 3GHz and assume the program takes 1 cpu cycle while running the program . Meaning it takes about 3000 cpu cycles to jump from 0 to 1000ns , however ,leading to the perdiction of a 99.7% of 0 in the resulat
